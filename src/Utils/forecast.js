@@ -10,8 +10,9 @@ const forecast = (data, callback) => {
             callback('unable to find weather info for the given location');
         } else{
             const {temperature, precipProbability} = body.currently;
+            const {summary, temperatureMax, temperatureMin, humidity} = body.daily.data[0];
             callback(undefined, {
-                forecast: `${body.daily.data[0].summary} It is currently ${body.currently.temperature}°C out. There is a ${body.currently.precipProbability}% chance of rain.`
+                forecast: `${summary} It is currently ${temperature}°C out. There is a ${precipProbability}% chance of rain. Today's maximum temperature will be ${temperatureMax}°C and the minimum will be ${temperatureMin}°C. The humidity is ${Math.floor(humidity*100)}%.`
             });
         }
     })
