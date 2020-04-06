@@ -12,7 +12,7 @@ const forecast = (data, callback) => {
             const {temperature, precipProbability} = body.currently;
             const {summary, temperatureMax, temperatureMin, humidity} = body.daily.data[0];
             callback(undefined, {
-                forecast: `${summary} It is currently ${temperature}°C out. There is a ${precipProbability}% chance of rain. Today's maximum temperature will be ${temperatureMax}°C and the minimum will be ${temperatureMin}°C. The humidity is ${Math.floor(humidity*100)}%.`
+                forecast: [summary, `It is currently ${temperature}°C out.`, `There is a ${precipProbability}% chance of rain.`, `Today's maximum temperature will be ${temperatureMax}°C and the minimum will be ${temperatureMin}°C.`, `The humidity is ${Math.floor(humidity*100)}%.`]
             });
         }
     })

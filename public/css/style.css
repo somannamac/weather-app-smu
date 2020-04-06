@@ -52,3 +52,9 @@ button {
     color: white;
     padding: 8px;
 }
+
+#msg-1, #msg-2 {
+    font-weight: bolder;
+    line-height: normal;
+    white-space: pre-line;
+}
